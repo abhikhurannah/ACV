@@ -33,7 +33,7 @@ def main():
     ranked=sorted(range(len(ids)),key=lambda i:float(rows['skip'][ids[i]]['miou']))
     picks={'representative':[ranked[int(len(ranked)*q)] for q in [.25,.5,.75]],'failures':ranked[:3]}
     selected={}
-    pal=np.array([[35,49,70],[12,161,157],[180,180,180]],dtype=np.uint8)
+    pal=np.array([[242,245,248],[12,145,150],[167,177,189]],dtype=np.uint8)
     for kind,indices in picks.items():
         fig,axes=plt.subplots(3,4,figsize=(10,8.3),layout='constrained')
         selected[kind]=[]
@@ -47,7 +47,7 @@ def main():
                 if row==0:a.set_title(['Source RGB at 96 × 96','Human mask','Baseline prediction','Skip prediction'][col],fontsize=11)
                 if col==0:a.set_xlabel(name,fontsize=9)
                 if col in [2,3]:a.set_xlabel(f"Image mIoU {float(rows[['baseline','skip'][col-2]][name]['miou'])*100:.1f}%",fontsize=10)
-        fig.suptitle(('Representative examples at skip-score quartiles' if kind=='representative' else 'Three lowest skip-score test examples')+'\nTeal = pet    Navy = background    Grey = ignored human boundary',fontsize=12)
+        fig.suptitle(('Representative examples at skip-score quartiles' if kind=='representative' else 'Three lowest skip-score test examples')+'\nTeal = pet    Light grey = background    Slate = ignored human boundary',fontsize=12)
         fig.savefig(F/f'{kind}.png',dpi=180);plt.close(fig)
     (A/'selected_examples.json').write_text(json.dumps(selected,indent=2))
     # Diagram is a code-native plot; boxes carry real tensor dimensions and operation names.
@@ -70,7 +70,7 @@ def main():
     fig,axes=plt.subplots(1,2,figsize=(7.5,3.6),layout='constrained')
     axes[0].imshow(tr['x'][0]);axes[0].set_title(str(tr['ids'][0]));axes[1].imshow(pal[raw]);axes[1].set_title('Target labels after nearest resize')
     for a in axes:a.axis('off')
-    fig.suptitle('0 background (navy)   1 pet (teal)   255 ignore (grey)',fontsize=11)
+    fig.suptitle('0 background (light grey)   1 pet (teal)   255 ignore (slate)',fontsize=11)
     fig.savefig(F/'data_contract.png',dpi=180);plt.close(fig)
     print('Generated figures and deterministic example selection',flush=True)
 if __name__=='__main__':main()

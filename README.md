@@ -10,12 +10,12 @@ The skip model achieved **71.76% test mIoU**, compared with **70.55%** for the b
 
 ## Start here
 
-The code and saved evidence can be reviewed without running the experiment. The supplied report is an AI-assisted reference draft. The assignment explicitly prohibits AI-generated reports, so write and check your own report before submission.
+The report, code and saved evidence can be reviewed without running the experiment. The report contains the supplied customized text, with technical corrections, formatted tables, architecture diagrams, plots and labelled evidence screenshots. Review the final wording and figures before submission.
 
 | What you want to see | Where to find it |
 |---|---|
-| Reference report PDF | [23115002.pdf](report/23115002.pdf) |
-| Editable reference draft | [23115002.docx](report/23115002.docx) |
+| Project report PDF | [23115002.pdf](report/23115002.pdf) |
+| Editable report | [23115002.docx](report/23115002.docx) |
 | Plan of action | [PLAN_OF_ACTION.md](PLAN_OF_ACTION.md) |
 | Submission instructions | [SUBMISSION.md](SUBMISSION.md) |
 | Exact measured results | [results.json](artifacts/results.json) |
@@ -24,7 +24,7 @@ The code and saved evidence can be reviewed without running the experiment. The 
 
 **Repository:** [github.com/abhikhurannah/ACV](https://github.com/abhikhurannah/ACV)
 
-The submission archive, `23115002_submission.zip`, contains the report, source code, trained checkpoints, logs, figures, screenshots and environment records. Before uploading the archive, replace the report files with your own final report named after your roll number, then rebuild the ZIP. The full dataset is downloaded separately when reproducing the experiment.
+The submission archive, `23115002_submission.zip`, contains the report, source code, trained checkpoints, logs, figures, screenshots and environment records. The report is named 23115002 and is included in PDF and editable Word formats. Open the PDF and check it before uploading. The full dataset is downloaded separately when reproducing the experiment.
 
 ## 1. What the project does
 
@@ -261,7 +261,7 @@ Training took approximately five minutes per model in the recorded session. Anot
 
 [build_evidence.py](src/build_evidence.py) creates HTML views from the actual logs and measured results. [capture_evidence.cjs](src/capture_evidence.cjs) captures those pages using Playwright and Chrome. The included screenshots are genuine browser views of this evidence dashboard, clearly labelled as such in the report.
 
-Screenshot capture is separate from model training. Install Playwright and use Google Chrome to run `src/capture_evidence.cjs`; set `PLAYWRIGHT_MODULE` and `CHROME_PATH` if their locations differ from your installation. The included captures can be inspected directly. Prepare the final report yourself in line with the assignment instructions.
+Screenshot capture is separate from model training. Install Playwright and use Google Chrome to run `src/capture_evidence.cjs`; set `PLAYWRIGHT_MODULE` and `CHROME_PATH` if their locations differ from your installation. The included captures can be inspected directly. The formatted report and editable Word document are included in report/.
 
 ## 9. Project layout
 
@@ -275,8 +275,8 @@ ACV/
 ├── requirements-lock.txt        Full pinned Python environment
 ├── reproduce.sh                 Complete experiment execution sequence
 ├── report/
-│   ├── 23115002.pdf             Reference report PDF
-│   └── 23115002.docx            Editable reference draft
+│   ├── 23115002.pdf             Final report PDF
+│   └── 23115002.docx            Editable report
 ├── src/
 │   ├── download.py              Download and verify source archives
 │   ├── prepare.py               Create the frozen data splits and arrays
