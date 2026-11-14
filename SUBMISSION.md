@@ -1,16 +1,29 @@
 # Submission guide
 
-Student: Abhay Kumar · Roll number: 23115002
+**Abhay Kumar · Roll number 23115002 · Advanced Computer Vision · Batch 2027**
 
-1. Upload `report/23115002.pdf` as the project report, or use the editable `report/23115002.docx` if Word is requested.
-2. Provide the GitHub link: https://github.com/abhikhurannah/ACV . The repository contains code, the report, manifests, raw logs, metrics and screenshots.
-3. Keep the local submission ZIP as the complete experiment bundle. It includes both trained checkpoints; downloaded data and the virtual environment are excluded.
-4. The instruction in the assignment screenshot about pushing code “into” an email address is ambiguous. GitHub collaboration requires the instructor's GitHub account or an explicit repository invitation. If the instructor asks for email delivery, send the repository link and report through the prescribed channel. This project has not sent an email or invited an account.
+## File to upload
 
-## Included report sections
+Upload **`23115002_submission.zip`** when the submission portal accepts a project archive. It contains a single folder, `23115002_ACV`, with the complete report, code and experiment evidence.
 
-Introduction, background study, detailed methodology, a block-level architecture diagram, all training parameters, results and interpretation, qualitative examples, failure cases, screenshots, a plan of action, limitations, conclusion and references.
+If the portal requests the report separately, upload **`report/23115002.pdf`**. An editable Word copy is available as **`report/23115002.docx`**. Both report filenames use the roll number.
 
-## Evidence integrity
+**GitHub repository:** https://github.com/abhikhurannah/ACV
 
-All scores come from actual trained models and human trimap targets. Screenshots are genuine browser views of local evidence dashboards built from saved output files. They are explicitly labelled as dashboard views. There are no fabricated training screenshots or invented experiment scores.
+## How to review the extracted project
+
+1. Open `report/23115002.pdf` for the full project report.
+2. Read `README.md` for the project explanation, measured results and execution instructions.
+3. Open `PLAN_OF_ACTION.md` for the experiment plan and fixed comparison budget.
+4. Inspect `artifacts/screenshots/` and `artifacts/figures/` for the visual evidence.
+5. Review `src/` for the implementation and `artifacts/` for the selected checkpoints, raw logs, metrics, split IDs and environment records.
+
+The report includes the introduction, background study, detailed methodology, architectural diagram, block parameters, results and interpretation, source images, failure cases, screenshots, limitations, conclusion and references.
+
+## Reproduction and integrity
+
+The selected checkpoints are included, so the experiment can be evaluated without retraining once the public dataset has been downloaded and prepared. The README provides separate instructions for checkpoint evaluation and full retraining.
+
+Downloaded data, the virtual environment and temporary report-rendering files are excluded from the archive. `SUBMISSION_SHA256.json` records the hashes of the included files. The report and evidence can be read without installing any dependencies.
+
+All reported model scores are measured against the supplied human trimaps. The screenshots show actual browser views of evidence pages generated from saved logs and results. Known annotation limitations and the scope of the single-seed experiment are documented in the report and README.
