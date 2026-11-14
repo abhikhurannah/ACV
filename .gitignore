@@ -1,0 +1,8 @@
+.venv/
+data/
+report/qa*/
+__pycache__/
+.DS_Store
+submission*.zip
+23115002_submission.zip
+artifacts/verification_results.json
