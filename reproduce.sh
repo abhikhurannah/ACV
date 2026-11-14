@@ -11,6 +11,6 @@ mkdir -p artifacts
 .venv/bin/python src/check_contract.py > artifacts/contract_check.log
 .venv/bin/python -u src/train.py --variant baseline > artifacts/baseline_train.log 2>&1
 .venv/bin/python -u src/train.py --variant skip > artifacts/skip_train.log 2>&1
-.venv/bin/python src/evaluate.py > artifacts/evaluation.log
+.venv/bin/python src/evaluate.py
 .venv/bin/python src/figures.py
 .venv/bin/python src/build_evidence.py

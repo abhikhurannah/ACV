@@ -8,7 +8,7 @@ Author: Abhay Kumar, 23115002
 4. Evaluate both saved checkpoints on exactly the same untouched 740-image official-test subset. Aggregate the two-class confusion matrix over all valid pixels; report per-class IoU and arithmetic mean IoU. Record parameters and CPU forward-only latency with batch 1, 30 warmups and 200 timed iterations.
 5. Produce evidence. Save raw epoch logs, checkpoints, metric JSON, per-image scores, loss and validation plots, original images next to human masks and predictions, representative failures, architecture and data-contract figures. Capture actual rendered experiment evidence pages as screenshots.
 6. Write the report. Cover introduction, background study, detailed methodology and block parameters, results with interpretation, limitations, conclusion, references and exact reproduction instructions. Name the report 23115002.
-7. Verify and package. Re-evaluate checkpoints, test metric edge cases and split integrity, render and inspect all report pages, and package source, environment versions, logs and evidence. Publish to GitHub only after the user provides the intended repository/account; do not send email without an explicit request.
+7. Verify and package. Re-evaluate checkpoints, test metric edge cases and split integrity, write the final report in your own words as required by the assignment, inspect all pages, and package source, environment versions, logs and evidence. Publish to GitHub only after the user provides the intended repository/account; do not send email without an explicit request.
 
 ## Expected submission
 

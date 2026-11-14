@@ -10,12 +10,12 @@ The skip model achieved **71.76% test mIoU**, compared with **70.55%** for the b
 
 ## Start here
 
-The project is ready to review without running any code. The report explains the experiment, and the saved outputs provide the supporting evidence.
+The code and saved evidence can be reviewed without running the experiment. The supplied report is an AI-assisted reference draft. The assignment explicitly prohibits AI-generated reports, so write and check your own report before submission.
 
 | What you want to see | Where to find it |
 |---|---|
-| Complete project report | [23115002.pdf](report/23115002.pdf) |
-| Editable report | [23115002.docx](report/23115002.docx) |
+| Reference report PDF | [23115002.pdf](report/23115002.pdf) |
+| Editable reference draft | [23115002.docx](report/23115002.docx) |
 | Plan of action | [PLAN_OF_ACTION.md](PLAN_OF_ACTION.md) |
 | Submission instructions | [SUBMISSION.md](SUBMISSION.md) |
 | Exact measured results | [results.json](artifacts/results.json) |
@@ -24,7 +24,7 @@ The project is ready to review without running any code. The report explains the
 
 **Repository:** [github.com/abhikhurannah/ACV](https://github.com/abhikhurannah/ACV)
 
-The submission archive, `23115002_submission.zip`, contains the report, source code, trained checkpoints, logs, figures, screenshots and environment records. Extract it and open `23115002_ACV/report/23115002.pdf` to read the report. The full dataset is downloaded separately when reproducing the experiment.
+The submission archive, `23115002_submission.zip`, contains the report, source code, trained checkpoints, logs, figures, screenshots and environment records. Before uploading the archive, replace the report files with your own final report named after your roll number, then rebuild the ZIP. The full dataset is downloaded separately when reproducing the experiment.
 
 ## 1. What the project does
 
@@ -235,7 +235,7 @@ python tools/verify_results.py
 
 The verification script compares the new accuracy measurements with the recorded results. It checks the class IoUs, global mIoU, confusion matrices, checkpoint hashes, selected epochs and update budget. It does not require latency samples to match, because timing naturally varies between runs.
 
-The evaluator also refreshes the saved prediction arrays and per-image score CSV. To keep the original submission files untouched, perform reproduction in a separate extracted copy of the archive.
+The evaluator creates prediction arrays and refreshes the per-image score CSV. Prediction arrays are excluded from the submission because they can be regenerated from the included checkpoints. To keep the original submission files untouched, perform reproduction in a separate extracted copy of the archive.
 
 ### Option B — retrain both variants
 
@@ -261,7 +261,7 @@ Training took approximately five minutes per model in the recorded session. Anot
 
 [build_evidence.py](src/build_evidence.py) creates HTML views from the actual logs and measured results. [capture_evidence.cjs](src/capture_evidence.cjs) captures those pages using Playwright and Chrome. The included screenshots are genuine browser views of this evidence dashboard, clearly labelled as such in the report.
 
-Document and screenshot authoring are separate from model training. Instructions for rebuilding the report and browser captures are in [tools/README.md](tools/README.md). The submitted PDF and Word files are already generated and ready to open.
+Screenshot capture is separate from model training. Install Playwright and use Google Chrome to run `src/capture_evidence.cjs`; set `PLAYWRIGHT_MODULE` and `CHROME_PATH` if their locations differ from your installation. The included captures can be inspected directly. Prepare the final report yourself in line with the assignment instructions.
 
 ## 9. Project layout
 
@@ -275,8 +275,8 @@ ACV/
 ├── requirements-lock.txt        Full pinned Python environment
 ├── reproduce.sh                 Complete experiment execution sequence
 ├── report/
-│   ├── 23115002.pdf             Final report
-│   └── 23115002.docx            Editable report
+│   ├── 23115002.pdf             Reference report PDF
+│   └── 23115002.docx            Editable reference draft
 ├── src/
 │   ├── download.py              Download and verify source archives
 │   ├── prepare.py               Create the frozen data splits and arrays
@@ -301,7 +301,7 @@ ACV/
 │   ├── figures/                 Architecture, curves, examples and failures
 │   ├── screenshots/             Included browser evidence captures
 │   └── evidence/                Underlying HTML evidence pages
-└── tools/                       Report, packaging and verification utilities
+└── tools/                       Packaging and verification utilities
 ```
 
 `data/` and `.venv/` are created locally during reproduction. They are excluded from Git and the submission archive. The ZIP includes a `SUBMISSION_SHA256.json` manifest for checking the integrity of its contents.
